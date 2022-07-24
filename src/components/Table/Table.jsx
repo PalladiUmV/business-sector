@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./Table.scss";
+import image from '../../img/arrow.png'
 
 export const Table = ({ data }) => {
-
     const loading = useSelector(({ loading }) => loading)
     const inputValue = useSelector(({ inputValue }) => inputValue)
+    const id = useSelector(({ byID }) => byID)
+    const title = useSelector(({ byTitle }) => byTitle)
+    const descr = useSelector(({ byDescr }) => byDescr)
 
     const dispatch = useDispatch()
 
@@ -47,9 +50,18 @@ export const Table = ({ data }) => {
                         <col style={{ width: "50%" }} ></col>
                         <thead>
                             <tr>
-                                <th onClick={() => send('id')}>ID</th>
-                                <th onClick={() => send('title')}>Заголовок</th>
-                                <th onClick={() => send('descr')}>Описание</th>
+                                <th onClick={() => send('id')}>
+                                    <span>ID</span>
+                                    <img className={!id ? 'up' : null} src={image} alt="arrow" />
+                                </th>
+                                <th onClick={() => send('title')}>
+                                    <span>Заголовок</span>
+                                    <img className={!title ? 'up' : 'down'} src={image} alt="arrow" />
+                                </th>
+                                <th onClick={() => send('descr')}>
+                                    <span>Описание</span>
+                                    <img className={!descr ? 'up' : 'down'} src={image} alt="arrow" />
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
