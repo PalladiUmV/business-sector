@@ -1,8 +1,8 @@
-import "../App.scss";
+import "./App.scss";
 
-import { Table } from "./Table/Table.jsx";
-import { SearchPanel } from "./SearchPanel/SearchPanel";
-import { TablePagination } from "./TablePagination/TablePagination";
+import { Table } from "../Table/Table.jsx";
+import { SearchPanel } from "../SearchPanel/SearchPanel";
+import { TablePagination } from "../TablePagination/TablePagination";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,7 +36,7 @@ export default function App() {
 
 
   useEffect(() => {
-    navigate(`/${currentPage}`)
+    navigate(`/business-sector/${currentPage}`)
   }, [currentPage])
 
 
