@@ -1,0 +1,37 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 25px;
+
+	thead th {
+		padding: 20px;
+		background-color: #474955;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 19px;
+	}
+
+	tbody {
+		td {
+			padding: 10px 10px;
+			border: 1px solid #E3E6EC;
+			font-size: 13px;
+			font-weight: 500;
+			line-height: 18px;
+			letter-spacing: 0em;
+			text-align: left;
+		}
+
+		td:first-child {
+			padding: 40px 50px;
+
+			@media (max-width: 767px) {
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
+}
